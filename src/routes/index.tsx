@@ -1,24 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { PlannerApp } from "@/components/planner/PlannerApp";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "StudyForge - Offline Study Planner & Task Tracker" },
+      {
+        name: "description",
+        content:
+          "StudyForge is a fast, private study planner: add, edit and complete tasks, track progress and streaks, with dark mode and offline local storage.",
+      },
+      { property: "og:title", content: "StudyForge - Offline Study Planner" },
+      {
+        property: "og:description",
+        content:
+          "Plan study sessions, track progress bars and streaks, and keep every task saved on your own device.",
+      },
+    ],
+  }),
+  component: PlannerApp,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
