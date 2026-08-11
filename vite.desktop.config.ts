@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 import { fileURLToPath } from "node:url";
 
 // Standalone SPA build used to package StudyForge as a downloadable desktop app.
@@ -9,7 +8,10 @@ import { fileURLToPath } from "node:url";
 export default defineConfig({
   base: "./",
   root: fileURLToPath(new URL("./desktop", import.meta.url)),
-  plugins: [react(), tailwindcss(), tsconfigPaths({ root: fileURLToPath(new URL(".", import.meta.url)) })],
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },
+  },
   build: {
     outDir: fileURLToPath(new URL("./dist-desktop", import.meta.url)),
     emptyOutDir: true,
