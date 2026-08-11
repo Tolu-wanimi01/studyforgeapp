@@ -9,7 +9,8 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build:desktop": "vite build --config vite.desktop.config.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -85,5 +86,6 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
     "vite": "^8.2.0"
-  }
+  },
+  "main": "electron/main.cjs"
 }
