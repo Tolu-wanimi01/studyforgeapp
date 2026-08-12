@@ -79,20 +79,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "StudyForge - Study Planner" },
+      { title: "StudyForge - Offline Study Planner & Task Tracker" },
       {
         name: "description",
         content:
-          "StudyForge is an offline-first study planner for tasks, progress tracking and study streaks.",
+          "StudyForge is a fast, private study planner: add, edit and complete tasks, track progress and streaks, with dark mode and offline local storage.",
       },
       { name: "author", content: "StudyForge" },
-      { property: "og:title", content: "StudyForge - Study Planner" },
+      { property: "og:title", content: "StudyForge - Offline Study Planner & Task Tracker" },
       {
         property: "og:description",
-        content: "Plan study tasks, track progress and keep everything saved on your device.",
+        content: "StudyForge is a fast, private study planner: add, edit and complete tasks, track progress and streaks, with dark mode and offline local storage.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "StudyForge - Offline Study Planner & Task Tracker" },
+      { name: "twitter:description", content: "StudyForge is a fast, private study planner: add, edit and complete tasks, track progress and streaks, with dark mode and offline local storage." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/7bce7abf-deec-4f25-ae96-ef023f351fc3" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/7bce7abf-deec-4f25-ae96-ef023f351fc3" },
     ],
     links: [
       {
